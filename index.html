@@ -587,6 +587,12 @@
               font-size: 150% !important;
             }
 
+            .hoverdescH4 {
+              font-weight: bold !important;
+              color: #fff !important;
+              font-size: 150% !important;
+            }
+
             .footer {
               text-align: center !important;
               font-size: 100% !important;
@@ -598,9 +604,9 @@
               width:60px;
               height:90px;
               margin:0 0 0 -10px;
-              position:absolute;
-              left:50%;
-              bottom:0px;
+              position:absolute !important;
+              left:50% !important;
+              bottom:0px !important;
               -webkit-animation: arrow 0.5s 1s infinite ease-out alternate;
               
             }
@@ -672,6 +678,91 @@
               }
             }
 
+            .tooly {
+               color: #e91e63;
+               font-family: monospace;
+               white-space: nowrap;
+            }
+
+            .tooly:after {
+               font-family: Arial, sans-serif;
+               text-align: center;
+               white-space: normal;
+            }
+
+            .tooly:focus {
+               outline: none;
+            }
+
+            .tooly {
+                
+                position: relative;
+            }
+
+
+            /*== common styles for both parts of tool tip ==*/
+            .tooly::before,
+            .tooly::after {
+                left: 50%;
+                opacity: 0;
+                position: absolute;
+                z-index: -100;
+            }
+
+            .tooly:hover::before,
+            .tooly:focus::before,
+            .tooly:hover::after,
+            .tooly:focus::after {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+                z-index: 100; 
+            }
+
+
+            /*== pointer tip ==*/
+            .tooly::before {
+                border-style: solid;
+                border-width: 1em 0.75em 0 0.75em;
+                border-color: #3E474F transparent transparent transparent;
+                bottom: 100%;
+                content: "";
+                margin-left: -0.5em;
+                transition: all .2s cubic-bezier(.84,-0.18,.31,1.26), opacity .65s .5s;
+                transform:  scale(.6) translateY(-90%);
+            } 
+
+            .tooly:hover::before,
+            .tooly:focus::before {
+                transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
+            }
+
+
+            /*== speech bubble ==*/
+            .tooly::after {
+                background: #3E474F;
+                border-radius: .25em;
+                bottom: 150%;
+                color: #EDEFF0;
+                content: attr(data-tip);
+                margin-left: -8.75em;
+                padding: 1em;
+                transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
+                transform:  scale(.6) translateY(50%);  
+                width: 17.5em;
+            }
+
+            .tooly:hover::after,
+            .tooly:focus::after  {
+                transition: all .65s cubic-bezier(.84,-0.18,.31,1.26);
+            }
+
+            @media (max-width: 760px) {
+              .tooly::after { 
+                    font-size: .75em;
+                    margin-left: -5em;
+                    width: 10em; 
+              }
+            }
 
              
 
@@ -690,8 +781,8 @@
   
   <!-- The Overlay Content -->
       <div class="overlay-content">
-        <a href="index.html">Home</a>
-        <a href="aboutMiguelPage.html">About</a>
+        <a href="index.html">My Work</a>
+        <a href="aboutMiguelPage.html">About Me</a>
         <a href="https://drive.google.com/file/d/1JeXdotJHBcRRDjSGMo6z6XuuiOyWNpco/view?usp=sharing">Resume</a>
         <a href="#" class="not-active">More Coming Soon!</a>
           <div class="flex-center">
@@ -725,14 +816,14 @@
             </div>
         </div>
 
-
+        
         <a href="#marahuyo"><div class="arrow-down">
   
-  
+    <span class="tooly" data-tip="Let me show you my work." tabindex="1">
           <div class="left"></div>
           <div class="right"></div>
           
-        </div></a>
+        </div></a></span>
 
     
 
@@ -781,11 +872,12 @@
                       <div class="hoverCard">
                         <div class="view view-first">
                           <img id="theStartupdisplay" class="responsive-img hoverable" src="theStartUp.png">              <!-- Modal Trigger -->
-                              <a class="modal-trigger" href="https://thenextstartup.000webhostapp.com/" target="_blank"><div class="mask">
+                              <div class="mask">
                                 <h1 class="hoverdescH1">The Startup</h1>
                                 <h2 class="hoverdescH2">&ltweb&gt</h2>
-                                <h3 class="hoverdescH3"><i class="fa fa-wrench" style="font-size:36px"></i> still undergoing construction</h3>
-                              </div></a>
+                                <h3 class="hoverdescH3">front-end + back-end</h3>
+                                <h3 class="hoverdescH4"><i class="fa fa-wrench" style="font-size:36px"></i> still undergoing construction</h3>
+                              </div>
                           </div>                             
                       </div>
                     </div>
@@ -794,11 +886,12 @@
                       <div class="hoverCard">
                         <div class="view view-first">
                           <img id="RLCdisplay" class="responsive-img hoverable" src="rlc.png">
-                              <a href="#" target="_blank"><div class="mask">
+                              <div class="mask">
                                 <h1 class="hoverdescH1">Kinaadman</h1>
                                 <h2 class="hoverdescH2">Physical UX</h2>
                                 <h3 class="hoverdescH3">Research + Strategy + Implementation</h3>
-                              </div></a>
+                                <h3 class="hoverdescH4"><i class="fa fa-wrench" style="font-size:36px"></i> still undergoing construction</h3>
+                              </div>
                         </div>                             
                       </div>
                     </div>

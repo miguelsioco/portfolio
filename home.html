@@ -588,6 +588,12 @@
               font-size: 150% !important;
             }
 
+            .hoverdescH4 {
+              font-weight: bold !important;
+              color: #fff !important;
+              font-size: 150% !important;
+            }
+
             .footer {
               text-align: center !important;
               font-size: 100% !important;
@@ -646,6 +652,32 @@
             color: #fff;
            }
 
+                       @-webkit-keyframes asrrow{
+              0% {
+                bottom:0px;
+              }
+              100%{
+                bottom:40px;
+              }
+            }
+
+
+            @-webkit-keyframes leftArrow{
+              0% {
+              }
+              100%{
+                -webkit-transform:rotate(225deg);
+              }
+            }
+
+            @-webkit-keyframes rightArrow{
+              0% {
+              }
+              100%{
+                -webkit-transform:rotate(-45deg);
+              }
+            }
+
 
              
 
@@ -654,8 +686,9 @@
     </head>
     <body>
 
-        <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+  
+
+
 
         <div id="myNav" class="overlay">
   
@@ -688,7 +721,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <h1 id="static">Hi, I'm<span><div class="con-tooltip top"><span class="miguel">Miguel</span><a href="aboutMiguelPage.html"><div class="tooltip hide-on-small-only"><p>Let me introduce myself in this <span class="tooltip-link">link.</span></span></p></div></a></div></span>. I can <br>
+                    <h1 id="static">Hi, I'm<span><div class="con-tooltip top"><span class="miguel">Miguel</span><a href="aboutMiguelPage.html"><div class="tooltip hide-on-small-only"><p>Let me introduce myself in this <span class="tooltip-link">link.</span></span></p></div></a></div></span> I can <br>
                       <span
                          class="txt-rotate"
                          data-period="800"
@@ -712,7 +745,7 @@
 
 
   <!-- Modal Structure -->
- <!--  <div id="modal1" class="modal">
+  <div id="modal1" class="modal">
     <div class="modal-content">
       <h4>Hard Hat Area</h4>
       <p>This project still has bugs and design challenges, bring a hard hat before entering!</p>
@@ -721,7 +754,7 @@
       <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Oh! Nevermind</a>
       <a href="https://thenextstartup.000webhostapp.com/">Sure!</a>
     </div>
-  </div> -->
+  </div>
          
           <div class="containered">
               <div class="row">
@@ -755,11 +788,12 @@
                       <div class="hoverCard">
                         <div class="view view-first">
                           <img id="theStartupdisplay" class="responsive-img hoverable" src="theStartUp.png">              <!-- Modal Trigger -->
-                              <a class="modal-trigger" href="https://thenextstartup.000webhostapp.com/" target="_blank"><div class="mask">
+                              <div class="mask">
                                 <h1 class="hoverdescH1">The Startup</h1>
                                 <h2 class="hoverdescH2">&ltweb&gt</h2>
-                                <h3 class="hoverdescH3"><i class="fa fa-wrench" style="font-size:36px"></i> still undergoing construction</h3>
-                              </div></a>
+                                <h3 class="hoverdescH3">front-end + back-end</h3>
+                                <h3 class="hoverdescH4"><i class="fa fa-wrench" style="font-size:36px"></i> still undergoing construction</h3>
+                              </div>
                           </div>                             
                       </div>
                     </div>
@@ -768,11 +802,12 @@
                       <div class="hoverCard">
                         <div class="view view-first">
                           <img id="RLCdisplay" class="responsive-img hoverable" src="rlc.png">
-                              <a href="#"><div class="mask">
+                              <div class="mask">
                                 <h1 class="hoverdescH1">Kinaadman</h1>
                                 <h2 class="hoverdescH2">Physical UX</h2>
                                 <h3 class="hoverdescH3">Research + Strategy + Implementation</h3>
-                              </div></a>
+                                <h3 class="hoverdescH4"><i class="fa fa-wrench" style="font-size:36px"></i> still undergoing construction</h3>
+                              </div>
                         </div>                             
                       </div>
                     </div>
@@ -796,7 +831,19 @@
             </div>
           </div>
 
+        <script type="text/javascript" src="js/materialize.min.js">
+            
+            $(document).ready(function(){
+              $('.scrollspy').scrollSpy();
+            });
 
+              $(document).ready(function(){
+                $('.modal').modal();
+              });
+      
+
+
+        </script>
 
 
             <script>
@@ -870,18 +917,8 @@
 
         </script>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js">
-            
-            $(document).ready(function(){
-              $('.scrollspy').scrollSpy();
-            });
-
-              $(document).ready(function(){
-                $('.modal').modal();
-              });
-      
 
 
-        </script>
+
     </body>
 </html>
