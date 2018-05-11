@@ -68,6 +68,13 @@
               font-weight: bold !important;
             }
 
+            .normal {
+              padding: 1px;
+              font-weight: bold !important;
+              color: black !important;
+              font-family:'Raleway', sans-serif;
+            }
+
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -389,6 +396,10 @@
 
         .pulse {
             border-radius: 20px !important;
+        }
+
+        .fixed-action-btn {
+          font-weight: bold;
         }
 
         .fixed-action-btn > .btn-floating > .fa-bars {
@@ -764,6 +775,17 @@
               }
             }
 
+            #contact {
+              height: 50vh;
+              align-items: center;
+              display: flex;
+              justify-content: center;
+            }
+
+            #contactbutton {
+              text-align: center;
+            }
+
              
 
 
@@ -784,6 +806,7 @@
         <a href="index.html">My Work</a>
         <a href="aboutMiguelPage.html">About Me</a>
         <a href="https://drive.google.com/file/d/1JeXdotJHBcRRDjSGMo6z6XuuiOyWNpco/view?usp=sharing">Resume</a>
+        <a href="contact.html">Contact</a>
         <a href="#" class="not-active">More Coming Soon!</a>
           <div class="flex-center">
             <a href="https://www.facebook.com/miguelmartin.sioco" target="_blank"><i class="fab fa-facebook-f icon-3d"></i></a>
@@ -797,7 +820,7 @@
 
     <!-- The Actual Button itself to open the nav -->
     <div class="fixed-action-btn">
-        <a class="btn-floating btn-large tooltipped pulse" data-position="left" data-tooltip="I can get you around faster" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        menu <a class="btn-floating btn-large tooltipped" data-position="left" data-tooltip="I can get you around faster" onclick="openNav()"><i class="fa fa-bars"></i></a>
     </div>
 
 
@@ -805,13 +828,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    <h1 id="static">Hi, I'm<span><div class="con-tooltip top"><span class="miguel">Miguel</span><a href="aboutMiguelPage.html"><div class="tooltip hide-on-small-only"><p>Let me introduce myself in this <span class="tooltip-link">link.</span></span></p></div></a></div></span>. I can <br>
+                    <h1 id="static">Hi, I'm<span><div class="con-tooltip top"><span class="miguel">Miguel</span><a href="aboutMiguelPage.html"><div class="tooltip hide-on-small-only"><p>Let me introduce myself in this <span class="tooltip-link">link.</span></span></p></div></a><span class="normal">.</span></div></span><br>I
                       <span
                          class="txt-rotate"
                          data-period="800"
                          data-rotate='[ "research", "design", "&ltcode&gt", "" ]'></span>
-                    things<span style="color:darkgreen">.</span></h1>
-                      
+                    </h1>
+                    
                 </div>
             </div>
         </div>
@@ -825,20 +848,7 @@
           
         </div></a></span>
 
-    
-
-
-  <!-- Modal Structure -->
- <!--  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Hard Hat Area</h4>
-      <p>This project still has bugs and design challenges, bring a hard hat before entering!</p>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Oh! Nevermind</a>
-      <a href="https://thenextstartup.000webhostapp.com/">Sure!</a>
-    </div>
-  </div> -->
+  
          
           <div class="containered">
               <div class="row">
@@ -868,10 +878,10 @@
                       </div>
                     </div>
 
-                    <div id="theStartup" class="col s12 m6 l6 section scrollspy">
+<!--                     <div id="theStartup" class="col s12 m6 l6 section scrollspy">
                       <div class="hoverCard">
                         <div class="view view-first">
-                          <img id="theStartupdisplay" class="responsive-img hoverable" src="theStartUp.png">              <!-- Modal Trigger -->
+                          <img id="theStartupdisplay" class="responsive-img hoverable" src="theStartUp.png">              
                               <div class="mask">
                                 <h1 class="hoverdescH1">The Startup</h1>
                                 <h2 class="hoverdescH2">&ltweb&gt</h2>
@@ -894,15 +904,17 @@
                               </div>
                         </div>                             
                       </div>
-                    </div>
+                    </div> -->
 
               </div>
           </div>
 
-           <div class="container">
+
+     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <hr class="grey">
+
             </div>
         </div>
     </div>
