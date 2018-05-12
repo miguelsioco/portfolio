@@ -185,7 +185,7 @@
         <a href="index.html">My Work</a>
         <a href="aboutMiguelPage.html">About Me</a>
         <a href="https://drive.google.com/file/d/1JeXdotJHBcRRDjSGMo6z6XuuiOyWNpco/view?usp=sharing">Resume</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Say Hello</a>
         <a href="#" class="not-active">More Coming Soon!</a>
           <div class="flex-center">
             <a href="https://www.facebook.com/miguelmartin.sioco" target="_blank"><i class="fab fa-facebook-f icon-3d"></i></a>
@@ -208,28 +208,37 @@
   <div class="container">
     <div class="row">
       <h1>How can I help you?</h1>
-      <h6>Tell me all about your crazy ideas, your wildest dreams, and your inspiring stories.</h6>
+      <h6>Tell me all about your crazy ideas, your wildest dreams, and your inspiring stories. Coffee's on me.</h6>
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-          <label for="first_name">First Name</label>
+          <input id="first_name" type="text" class="validate">
+          <label for="first_name">Name</label>
         </div>
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Last Name</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Message</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
           <input id="email" type="email" class="validate">
-          <label for="email">Where Can I Reach You?</label>
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <textarea id="textarea2" class="materialize-textarea" data-length="1000"></textarea>
+            <label for="textarea2">Message</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input type="text" class="timepicker">
+          <label for="email">When Do You Want to Be Reached?</label>
+        </div>
+        <div class="input-field col s6">
+          <input type="text" class="datepicker">
+          <label for="text">When Do You Want to Get Coffee?</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+          <button type="submit">Submit</button>
         </div>
       </div>
     </form>
@@ -255,11 +264,11 @@
           </div>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 
 
 
-    <script type="text/javascript">
+    <script type="text/javascript">    
         
         function openNav(){
           document.getElementById("myNav").style.width ="100%";
@@ -270,6 +279,27 @@
         function closeNav(){
           document.getElementById("myNav").style.width="0%";
         }
+
+    </script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+          $('.timepicker').timepicker();
+
+          $('.datepicker').datepicker();
+
+          $('input#input_text, textarea#textarea2').characterCounter();
+
+          $('#textarea1').val('');
+            M.textareaAutoResize($('#textarea1'));
+
+
+        });
+
+
+
     </script>
 
 </body>

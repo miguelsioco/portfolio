@@ -64,11 +64,12 @@
             }
 
             .smallertext {
-                font-size: 85%;
-            }
+                /*font-size: 85%;
+*/            }
 
             .hello {
                 font-weight: bold;
+                /*font-size: 4.2em;*/
             }
 
             .txt-rotate, .CTA {
@@ -290,6 +291,46 @@
           font-weight: bold;
         }
 
+        #return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top i {
+    color: #fff;
+    margin: 0;
+    position: relative;
+    left: 16px;
+    top: 13px;
+    font-size: 19px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+#return-to-top:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+#return-to-top:hover i {
+    color: #fff;
+    top: 5px;
+}
 
 
         </style>
@@ -307,7 +348,7 @@
         <a href="index.html">My Work</a>
         <a href="aboutMiguelPage.html">About Me</a>
         <a href="https://drive.google.com/file/d/1JeXdotJHBcRRDjSGMo6z6XuuiOyWNpco/view?usp=sharing">Resume</a>
-        <a href="contact.html">Contact</a>
+        <a href="contact.html">Say Hello</a>
         <a href="#" class="not-active">More Coming Soon!</a>
           <div class="flex-center">
             <a href="https://www.facebook.com/miguelmartin.sioco" target="_blank"><i class="fab fa-facebook-f icon-3d"></i></a>
@@ -324,6 +365,12 @@
         menu <a class="btn-floating btn-large tooltipped" data-position="left" data-tooltip="I can get you around faster" onclick="openNav()"><i class="fa fa-bars"></i></a>
     </div>
     
+    <!-- Return to Top -->
+<a href="javascript:" id="return-to-top"><i class="icon-chevron-up"></i></a>
+
+
+<!-- ICON NEEDS FONT AWESOME FOR CHEVRON UP ICON -->
+<link href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" rel="stylesheet">
 
     <div class="containered">
               <div class="row">
@@ -335,7 +382,7 @@
                         <br>
                         <h6>Also, Netflix has Avatar, The Last Airbender, so you can also find me infront of a Netflix screen too.</h6  >
                         <br>
-                        <a href="mailto:miguelsioco@gmail.com?Subject=Let%20us%20make%20things" type="btn btn-large"><h6><span class="CTA">Click here if you're ready to make human-centric things</span></a>...or you can read more about me below.</h6>
+                        <a href="contact.html" type="btn btn-large"><h6><span class="CTA">Click here if you're ready to make human-centric things</span></a>...or you can read more about me below.</h6>
                     </div>
 
                     <div class="col s12 m12 l6 section scrollspy profile">
@@ -355,7 +402,7 @@
     <div class="containered2">
               <div class="row">
                     <div class="col s12 m12 l12 section scrollspy">
-                        <h1 class="hello"><span class="smallertext"> my tool is <span class="txt-rotate2">empathy </span></span>and <span class="txt-rotate2">curiosity</span>. my product is<span class="txt-rotate2"> problem-solving</span>.</h1>
+                        <h1 class="hello"><span class="smallertext"> my tools are <span class="txt-rotate2">empathy </span></span>and <span class="txt-rotate2">curiosity</span>.<br> my product is<span class="txt-rotate2"> problem-solving</span>.</h1>
                         <h5>I aspire to redefine effortless interactions with the digital & physical world we live in today, and I plan to do it solving one user problem, one buggy code, and one iteration at a time.</h5>
                         <br>
                         
@@ -414,6 +461,25 @@
         function closeNav(){
           document.getElementById("myNav").style.width="0%";
         }
+
+    </script>
+
+    <script type="text/javascript">
+
+      
+        $(window).scroll(function() {
+            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+            } else {
+                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+            }
+        });
+        $('#return-to-top').click(function() {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop : 0                       // Scroll to top of body
+            }, 500);
+        });
+   
     </script>
 
 </body>
