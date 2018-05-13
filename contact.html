@@ -174,6 +174,12 @@
               border-radius: 20px;
             }
 
+        .header {
+          text-align: center;
+          color: black;
+          font-weight: bold;
+        }
+
         </style>
 
     </head>
@@ -203,7 +209,7 @@
 
     <!-- The Actual Button itself to open the nav -->
     <div class="fixed-action-btn">
-        menu <a class="btn-floating btn-large tooltipped" data-position="left" data-tooltip="I can get you around faster" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        menu <a class="btn-floating btn-large tooltipped" data-position="left" data-tooltip="Navigate here" onclick="openNav()"><i class="fa fa-bars"></i></a>
     </div>
 
 
@@ -211,31 +217,105 @@
 
   <div class="container">
     <div class="row">
-      <h1>How can I help you?</h1>
-      <h6>Tell me all about your crazy ideas, your wildest dreams, and your inspiring stories. Coffee's on me.</h6>
-    <form class="col s12">
-      <div class="row">
-        <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate">
-          <label for="first_name">Name</label>
-        </div>
-        <div class="input-field col s6">
-          <input id="email" type="email" class="validate">
-          <label for="email">Email</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <textarea id="textarea2" class="materialize-textarea" data-length="1000"></textarea>
-            <label for="textarea2">Message</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col s12">
-          <button id="submit" type="submit">Submit</button>
-        </div>
-      </div>
-    </form>
+      <h1 class="header">How can I help you?</h1>
+      <div class="col s12 m12 l12">
+            <ul class="collapsible popout" data-collapsible="accordion">
+             
+              <li>
+                <div class="collapsible-header"><i class="far fa-comment"></i>Want to Have a Chat?</div>
+                <div class="collapsible-body"><h6>Tell me all about your crazy ideas, your wildest dreams, and your inspiring stories.</h6>
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">Name</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <textarea id="textarea2" class="materialize-textarea" data-length="1000"></textarea>
+                          <label for="textarea2">Message</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s12">
+                        <button id="submit" type="submit">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                </div>
+              </li>
+
+              <li>
+                <div class="collapsible-header"><i class="fas fa-briefcase"></i>Interesed in investing or collaborating on any of my current projects?</div>
+                <div class="collapsible-body"><h6>Want to explore opportunities in any of my current projects? Or maybe you have a startup idea of your own and want an awesome partner? I'm down to talk.</h6>
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">Name</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <textarea id="textarea2" class="materialize-textarea" data-length="1000"></textarea>
+                          <label for="textarea2">Message</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s12">
+                        <button id="submit" type="submit">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                </div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="far fa-lightbulb"></i>Have a project you need built?</div>
+                <div class="collapsible-body"><h6>I can't wait to make your ideas into reality. Tell me more about it and let's make it happen. Coffee's on me.</h6>
+                <div class="row">
+                  <form class="col s12">
+                    <div class="row">
+                      <div class="input-field col s6">
+                        <input id="first_name" type="text" class="validate">
+                        <label for="first_name">Name</label>
+                      </div>
+                      <div class="input-field col s6">
+                        <input id="email" type="email" class="validate">
+                        <label for="email">Email</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <textarea id="textarea2" class="materialize-textarea" data-length="1000"></textarea>
+                          <label for="textarea2">Message</label>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col s12">
+                        <button id="submit" type="submit">Submit</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                </div>
+              </li>
+             
+            </ul>
+          </div>
+
   </div>
 </div>
 </div>
@@ -285,6 +365,10 @@
 
           $('#textarea1').val('');
             M.textareaAutoResize($('#textarea1'));
+
+          $('.tooltipped').tooltip();
+
+           $('.collapsible').collapsible();
 
 
         });

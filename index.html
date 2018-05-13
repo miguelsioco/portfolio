@@ -689,92 +689,6 @@
               }
             }
 
-            .tooly {
-               color: #e91e63;
-               font-family: monospace;
-               white-space: nowrap;
-            }
-
-            .tooly:after {
-               font-family: Arial, sans-serif;
-               text-align: center;
-               white-space: normal;
-            }
-
-            .tooly:focus {
-               outline: none;
-            }
-
-            .tooly {
-                
-                position: relative;
-            }
-
-
-            /*== common styles for both parts of tool tip ==*/
-            .tooly::before,
-            .tooly::after {
-                left: 50%;
-                opacity: 0;
-                position: absolute;
-                z-index: -100;
-            }
-
-            .tooly:hover::before,
-            .tooly:focus::before,
-            .tooly:hover::after,
-            .tooly:focus::after {
-                opacity: 1;
-                transform: scale(1) translateY(0);
-                z-index: 100; 
-            }
-
-
-            /*== pointer tip ==*/
-            .tooly::before {
-                border-style: solid;
-                border-width: 1em 0.75em 0 0.75em;
-                border-color: #3E474F transparent transparent transparent;
-                bottom: 100%;
-                content: "";
-                margin-left: -0.5em;
-                transition: all .2s cubic-bezier(.84,-0.18,.31,1.26), opacity .65s .5s;
-                transform:  scale(.6) translateY(-90%);
-            } 
-
-            .tooly:hover::before,
-            .tooly:focus::before {
-                transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
-            }
-
-
-            /*== speech bubble ==*/
-            .tooly::after {
-                background: #3E474F;
-                border-radius: .25em;
-                bottom: 150%;
-                color: #EDEFF0;
-                content: attr(data-tip);
-                margin-left: -8.75em;
-                padding: 1em;
-                transition: all .65s cubic-bezier(.84,-0.18,.31,1.26) .2s;
-                transform:  scale(.6) translateY(50%);  
-                width: 17.5em;
-            }
-
-            .tooly:hover::after,
-            .tooly:focus::after  {
-                transition: all .65s cubic-bezier(.84,-0.18,.31,1.26);
-            }
-
-            @media (max-width: 760px) {
-              .tooly::after { 
-                    font-size: .75em;
-                    margin-left: -5em;
-                    width: 10em; 
-              }
-            }
-
             #contact {
               height: 50vh;
               align-items: center;
@@ -784,6 +698,14 @@
 
             #contactbutton {
               text-align: center;
+            }
+
+            #scroll {
+              background-color: white !important;
+              /*height: 10px;*/
+              position: relative;
+              bottom: 26px;
+              right: 12px;
             }
 
              
@@ -820,7 +742,7 @@
 
     <!-- The Actual Button itself to open the nav -->
     <div class="fixed-action-btn">
-        menu <a class="btn-floating btn-large tooltipped" data-position="left" data-tooltip="I can get you around faster" onclick="openNav()"><i class="fa fa-bars"></i></a>
+        menu <a class="btn-floating btn-large tooltipped" data-position="left" data-tooltip="Navigate here" onclick="openNav()"><i class="fa fa-bars"></i></a>
     </div>
 
 
@@ -838,21 +760,21 @@
                 </div>
             </div>
         </div>
-
         
-        <a href="#marahuyo"><div class="arrow-down">
+        
+<div class="arrow-down">
   
-    <span class="tooly" data-tip="Let me show you my work." tabindex="1">
-          <div class="left"></div>
+    <span class="tooltipped" data-position="top" data-tooltip="Let me show you my work." tabindex="1">
+          <a id="scroll" href="#introduction" class="btn-large"></a><div class="left"></div>
           <div class="right"></div>
           
-        </div></a></span>
+        </div></span>
 
-  
-         
+
+         <div id="introduction" class="section scrollspy">
           <div class="containered">
               <div class="row">
-                    <div id="marahuyo" class="col s12 m6 l6 section scrollspy">
+                    <div id="marahuyo" class="col s12 m12 l6">
                       <div class="hoverCard">
                         <div class="view view-first">
                           <img id="marahuyodisplay" class="responsive-img hoverable" src="marahuyofinal.png">
@@ -865,7 +787,7 @@
                       </div>
                     </div>
 
-                    <div id="risah" class="col s12 m6 l6 section scrollspy">
+                    <div id="risah" class="col s12 m12 l6 section scrollspy">
                       <div class="hoverCard">
                         <div class="view view-first">
                           <img id="risahdisplay" class="responsive-img hoverable" src="risah.png">
@@ -908,6 +830,7 @@
 
               </div>
           </div>
+        </div>
 
 
      <div class="container">
@@ -1003,10 +926,13 @@
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        
         <script>
             
             $(document).ready(function(){
               $('.scrollspy').scrollSpy();
+
+              $('.tooltipped').tooltip();
             });
 
       
