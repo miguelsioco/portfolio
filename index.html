@@ -1,943 +1,596 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Miguel Sioco</title>
-        <link rel="shortcut icon" href="favicon.ico" type="image/favicon-icon">
+	<title>Miguel Sioco | Design & Code </title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto" rel="stylesheet">
 
-        <!-- Font Awesome CDN -->
-       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+<style type="text/css">
 
-        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+.difcontainer1, .difcontainer2, .difcontainer3 {
+/*   height:100vh;*/
+   animation-name: daytransition;
+   animation-duration: 0.5s;
+   font-family: 'Raleway', sans-serif;
+}
 
-        <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+.landing {
+	height: 100vh !important;
+	display:flex;
+	flex-direction: column;
+	margin: 0 auto;
+	-webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    justify-content: space-around;
+    max-width: 1440px;
+}
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100 !important;
-                /*height: 100vh;*/
-                margin: 0;
-            }
+.landing2 {
+  /*height: 100vh !important;*/
+  margin: 0 auto;
+  max-width: 1440px;
+}
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 30px;
-                font-weight: bold !important;
-            }
-
-            #static {
-              font-weight: bold !important;
-            }
-
-            .normal {
-              padding: 1px;
-              font-weight: bold !important;
-              color: black !important;
-              font-family:'Raleway', sans-serif;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 1000;
-                /*letter-spacing: .1rem;*/
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-
-            #static {
-                color: black;
-            }
-
-           /*  .txt-rotate {
-                color: midnightblue;
-            }*/
-
-            .txt-rotate {
-                color: midnightblue;
-                font-family: 'Permanent Marker', cursive;
-                -webkit-animation:colorchange 15s infinite alternate;
-            }
-
-            @-webkit-keyframes colorchange {
-              0% {
-                
-                color: blue;
-              }
-              
-              10% {
-                
-                color: #8e44ad;
-              }
-              
-              20% {
-                
-                color: #1abc9c;
-              }
-              
-              30% {
-                
-                color: #d35400;
-              }
-              
-              40% {
-                
-                color: blue;
-              }
-              
-              50% {
-                
-                color: #34495e;
-              }
-              
-              60% {
-                
-                color: blue;
-              }
-              
-              70% {
-                
-                color: #2980b9;
-              }
-              80% {
-             
-                color: #f1c40f;
-              }
-              
-              90% {
-             
-                color: #2980b9;
-              }
-              
-              100% {
-                
-                color: pink;
-              }
-            }
-
-            .outer {
-              /*padding-top: 120px;*/
-              width: 850px;
-              margin: auto;
-              /*display: block;*/
-              background-color: black;*/
-              /* set the font color here as a background color, in this case black
-              background-color: black; */
-            }
-
-            .bg {
-              text-align: center;
-              width: 0%;
-              transition: all 0.6s ease-out;
-              background: #3ebac6 background: -moz-linear-gradient(left, #3ebac6 0%, #8b539e 50%, #e53782 100%);
-              background: -webkit-gradient(linear, left top, right top, color-stop(0%, #3ebac6), color-stop(50%, #8b539e), color-stop(100%, #e53782));
-              background: -webkit-linear-gradient(left, #3ebac6 0%, #8b539e 50%, #e53782 100%);
-              background: -o-linear-gradient(left, #3ebac6 0%, #8b539e 50%, #e53782 100%);
-              background: -ms-linear-gradient(left, #3ebac6 0%, #8b539e 50%, #e53782 100%);
-              background: linear-gradient(to right, #3ebac6 0%, #8b539e 50%, #e53782 100%);
-              filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#3ebac6', endColorstr='#e53782', GradientType=1);
-            }
-
-            .inner {
-              display: inline-block;
-              background-color: white;
-              mix-blend-mode: screen;
-              padding: 5px;
-              width: 850px;
-            }
-
-            h2 {
-              color: black;
-              font-size: 50px;
-              letter-spacing: 5px;
-            }
-
-            .outer:hover .bg {
-              width: 100%;
-            }
-
-            .miguel:after {    
-              background: none repeat scroll 0 0 transparent;
-              bottom: 0;
-              content: "";
-              display: block;
-              height: 2px;
-              left: 50%;
-              position: absolute;
-              background: midnightblue;
-              transition: width 0.3s ease 0s, left 0.3s ease 0s;
-              width: 0;
-            }
-            .miguel:hover:after { 
-              width: 100%; 
-              left: 0; 
-            }
-
-            /*tooltip Box*/
-            .con-tooltip {
-
-              position: relative;
-              background: #FFF;
-              font-family: 'Permanent Marker', cursive;
-              color: darkgreen;
-              
-              border-radius: 9px;
-              padding: 0 5px;
-              margin: 10px;
-              
-              display: inline-block;
-              
-              transition: all 0.3s ease-in-out;
-              cursor: default;
-
-            }
-
-            /*tooltip */
-            .tooltip {
-              visibility: hidden;
-              z-index: 1;
-              opacity: .40;
-              font-size: 25px !important;
-              font-family: 'Raleway', sans-serif;
-              line-height: 95% !important;
-              
-              width: 100%;
-              padding: 0px 10px !important;
-
-              background: white;
-              color: black;
-              
-              position: absolute;
-              top:-145%;
-              left: -25%;
-              
-
-              border-radius: 25px;
-              
-
-              transform: translateY(9px);
-              transition: all 0.3s ease-in-out;
-              
-              box-shadow: 0 0 3px rgba(56, 54, 54, 0.86);
-            }
+@keyframes daytransition {
+    from {
+        background-color: #191e27;
+    }
+    to {
+        background-color: #fff;
+    }
+}
+.text {
+/* 	margin:auto;*/
+}
+.p-lg {
+    font-size: 28px;
+}
+.p-sm {
+    margin: 30px;
+}
+.night {
+    animation-name: nighttransition;
+    animation-duration: 0.5s;
+    background-color: #191e27 !important;
+}
+@keyframes nighttransition {
+    from {
+        background-color: #fff;
+    }
+    to {
+        background-color: #191e27;
+    }
+}
+.text-night {
+    color: #fff !important;
+}
+.btn {
+    margin: 30px;
+    background-color: #6f6f8e !important;
+    color: #FBFFC9 !important;
+}
+.btn-night {
+    background-color: #FBFFC9 !important;
+    color: #6f6f8e !important;
+}
 
 
-            /* tooltip  after*/
-            .tooltip::after {
-              content: " ";
-              width: 0;
-              height: 0;
-              
-              border-style: solid;
-              border-width: 12px 12.5px 0 12.5px;
-              border-color: #333 transparent transparent transparent;
+.toggle {
+	position:fixed;
+	right: 0;
+	margin: 25px;
+}
 
-              position: absolute;
-              left: 40%;
+.table-of-contents {
+	margin-top: 180%;
+	margin-left: 70%;
+	font-size: 150%
+}
 
-            }
+.table-of-contents a {
+	color: black;
+}
 
-            .con-tooltip:hover .tooltip{
-              visibility: visible;
-              transform: translateY(-10px);
-              opacity: 1;
-                transition: .3s linear;
-              animation: odsoky 1s ease-in-out infinite  alternate;
+.table-of-contents a.active {
+	border-left: 2px solid #84c7c1 !important;
+}
 
-            }
-            @keyframes odsoky {
-              0%{
-                transform: translateY(6px); 
-              }
+.waver {
+  cursor:pointer;
+}
 
-              100%{
-                transform: translateY(1px); 
-              }
+.waver:hover {
+  animation: wave 2.5s ease infinite;
+}
 
-            }
-            .top:hover {
-              transform: translateY(-6px);
-            }
+@-webkit-keyframes wave {
+  0% {
+    -webkit-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+  }
 
-            .tooltip-link {
-              color: darkgreen;
-              text-decoration: underline;
-            }
+  8% {
+    -webkit-transform: rotate(12deg);
+    transform: rotate(12deg);
+  }
 
-            .containered {
-              height: 100vh;
-            }
+  10% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
 
-            #marahuyo, #risah, #theStartup, #RLC {
-              padding: 0px !important;
-              height: 100% !important;
-              
-            }
+  18% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
 
-            .overlay{
-          height:100%;
-          width:0;
-          position:fixed;
-          z-index:1;
-          left:0;
-          top:0;
-          background-color: rgba(0,0,0, 0.9); 
-          transition:0.5s;
-          overflow-x:hidden; 
-        }
+  20% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  28% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  38% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  48% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  58% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  68% {
+    -webkit-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes wave {
+  0% {
+    -webkit-transform: rotate(-12deg);
+    -ms-transform: rotate(-12deg);
+    transform: rotate(-12deg);
+  }
+
+  8% {
+    -webkit-transform: rotate(12deg);
+    -ms-transform: rotate(12deg);
+    transform: rotate(12deg);
+  }
+
+  10% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  18% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  20% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  28% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  30% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  38% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  40% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  48% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  50% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  58% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  60% {
+    -webkit-transform: rotate(-24deg);
+    -ms-transform: rotate(-24deg);
+    transform: rotate(-24deg);
+  }
+
+  68% {
+    -webkit-transform: rotate(24deg);
+    -ms-transform: rotate(24deg);
+    transform: rotate(24deg);
+  }
+
+  75% {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+}
+
+#return-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    /*background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.7);*/
+    width: 50px;
+    height: 50px;
+    display: block;
+    text-decoration: none;
+    -webkit-border-radius: 35px;
+    -moz-border-radius: 35px;
+    border-radius: 35px;
+    display: none;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#return-to-top img {
+	height: 100%;
+	vertical-align: middle;
+}
+
+#return-to-top:hover {
+	transform: translateY(-15px);
+}
+
+.contact {
+	font-weight:normal;
+}
+
+.name {
+	font-weight: bolder;
+	font-family: 'Raleway', sans-serif;
+}
 
 
-        .overlay-content{
-          position:relative;
-          top:25%;
-          width:100%;
-          text-align:center;
-          margin-top:30px;
-          font-weight: bold !important; 
-          font-family: 'Raleway', serif;
+#email, .navlinks {
+	transition: all .2s ease-in-out;
+	color: black;
+    font-weight: bold;
+    /*text-decoration: none;*/
+    display: inline-block;
+    padding: 2px 3px;
+    text-decoration: none;
+    /*-webkit-box-shadow: inset 0 -3px 0 #007bff;*/
+    box-shadow: inset 0 -3px 0 #84c7c1;
+}
+
+#email:hover, .navlinks:hover {
+	color: #84c7c1 !important;
+	box-shadow: inset 0 -3px 0 black;
+}
+
+#about, #projects {
+  display: inline-block;
+  padding: 2px 3px;
+  box-shadow: inset 0 -3px 0 #84c7c1;
+}
+
+.header1 {
+  margin: 0;
+  max-width: 650px;
+  font-size: 1rem;
+}
+
+#work, #work2 {
+  max-width:100%;
+  width: 100%;
+  margin: 0;
+}
+
+.marahuyo {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 330px) and (min-width:270px) {
+	.waver, .nerd {
+		height: 25px;
+	}
+
+	.text {
+		font-size: 1.4rem !important;
+	}
+
+	.name {
+		/*font-size: 1.7rem !important;
+*/	}
+
+	.contact {
+		font-size: 1.1rem !important;
+	}
+
+	.landing, .landing2 {
+	padding: 70px 50px;
+	}
+
+  .difcontainer3 {
+    margin-top: 5%;
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width:331px) {
+	.waver, .nerd {
+		height: 27px;
+	}
+
+	.text {
+		font-size: 1.75rem !important;
+	}
+
+	.name {
+		/*font-size: 2rem !important;*/
+	}
+
+	.contact {
+		font-size: 1.45rem !important;
+	}
+
+	.landing, .landing2 {
+	padding: 120px 50px;
+	}
+}
+
+@media screen and (max-width: 1441px) and (min-width: 769px) {
+	.waver, .nerd {
+		height: 35px;
+	}
+
+	.text {
+		font-size: 2.25rem !important;
+	}
+
+  .text {
+    max-width: 700px;
+  }
+
+	.name {
+		/*font-size: 2.5rem !important;*/
+	}
+
+	.contact {
+		font-size: 1.95rem !important;
+	}
+/*
+  #about {
+    margin-left: 40%;
+  }*/
+
+
+
+	.landing {
+	padding: 120px 100px;
+	}
+
+  .landing2 {
+    padding: 50px 100px;
+    height: 80vh;
+  }
+}
+
+</style>
+	
+</head>
+<body>
+
+		<div class="difcontainer1">
+
+			 <div class="switch toggle">
+				<span>
+
+			    <label>
+			      Day<!-- <i class="tiny material-icons">brightness_low</i> -->
+			      <input type="checkbox" id="chkbox">
+			      <span class="lever"></span>
+			      Night<!-- <i class="tiny material-icons">brightness_3</i> -->
+			    </label>
+				</span>
+
+				<ul class="col hide-on-med-and-down section table-of-contents">
+			        <li><a class="navigation" href="#home">◦</a></li>
+			        <li><a class="navigation" href="#header1">◦</a></li>
+              <li><a class="navigation" href="#work">◦</a></li>
+			    </ul>
+
+			 </div>
+
+
+			<div class="row landing">
+				<div class="col s12 m12 l12">
+					<div class="text section scrollspy" id="home">
+						<p>Hi there!<span><img src="wavinghandsioco.png" class="waver"></span><img src="nerd.png" class="nerd"></span> <br><br> I'm <span class="name"><a class="navlinks" href="#header1">Miguel Sioco</a></span>, a design-oriented developer dedicated to creating beautiful and functional <span><a class="navlinks" href="#work">digital experiences</a></span>.</p>
+
+						<p class="contact">Get in touch -> <span><a id="email" href="mailto:miguelsioco@gmail.com?Subject=Hello!" target="_top">miguelsioco@gmail.com</a></span></p>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+
+		<div class="difcontainer2">
+			<div class="row landing2">
+
+				<div class="col s12 m12 l3"> 
+          <h5 id="about">BACKGROUND</h5>
+        </div>
+
+        <div class="col s12 m12 l9">
+					
+          <p class="header1 section scrollspy" id="header1">I'm currently an Associate Consultant for Customer Experience at <span><a class="navlinks" href="http://www.mindbrokercorp.com/">Mindbroker Corporation</a></span>. I help a retail conglomerate revitalize their total customer experience through research, strategy, and implementation of process improvement initiatives and skills coaching programs.</p>
+
+          <p class="header1">When I'm not on my regular 9-5, I work on the digital side of things, creating websites and web apps for clients. I also write and contribute marketing content to a Singapore-based media, events, and jobs platform, named <span><a class="navlinks" href="https://www.techinasia.com/profile/miguel-martin-sioco">Tech In Asia</a></span>.</p>
+
+          <br>
+
+          <p class="header1">I am a perpetual student of user experience and human behavior. I love to create better digital and physical experiences for customers, employees, and other stakeholders.</p>
+
+          <br>
+
+          <a class="navlinks" href="https://drive.google.com/file/d/1ZD8zelSTsxBczHNwZrXz1zqXD8OsP3oD/view?usp=sharing" target="_blank">View My Resume</a>
+
+				</div>
+
+			</div>
+		</div>
+
+    <div class="difcontainer3">
+      <div class="row landing2"> 
+        <div class="col s12 m12 l3">
+          <h5 id="projects">PROJECTS</h5>
+        </div>
+
+        <div class="col s12 m12 l9 marahuyo">
+          <a href="https://miguelsioco.github.io/miguelsioco/capstone1day7_sioco.html" target="_blank"><img class="header1 section scrollspy" id="work" src="works.png"></a>
+        </div>
+
+        <div class="col s12 m12 l3">
           
-        }
+        </div>
 
-        /*link */
-        .overlay a{
-          padding:8px;
-          text-decoration:none;
-          font-size:36px;
-          color: #818181;
-          display:block;
-          transition:0.3s; /*per l'hover */
-        }
-        .overlay a:hover, .overlay a:focus{
-          color: #f1f1f1;
-        }
+        <div class="col s12 m12 l9 risah">
+          <a href="http://home.risah.tk/index.php/" target="_blank"><img class="header1 section scrollspy" id="work2" src="works2.png"></a>
+        </div>
 
-
-        .closebtn{
-          position:absolute;
-          top:25px;
-          right:45px;
-          font-size:65px !important;
-        }
-
-        @media screen and (max-height:450px){
-            .closebtn {
-                font-size: 40px !important;
-                top: 15px;
-                right: 35px;
-            }
-        }
-
-
-        button{
-          display:block;
-          margin:auto;
-          background-color:black;
-          color:white;
-          border:none;
-          font-size:1.5em;
-          padding:20px 100px;
-          cursor:pointer;
-          transition:0.2s;
-        }
-        button:hover{
-          background-color:white;
-          color:black;
-          border:1px solid black;
-        }
-
-        .fa-bars {
-            color: black !important;
-            background-color: #fff !important;
-        }
-
-        .pulse {
-            border-radius: 20px !important;
-        }
-
-        .fixed-action-btn {
-          font-weight: bold;
-        }
-
-        .fixed-action-btn > .btn-floating > .fa-bars {
-          transition: transform 0.3s;
-        }
-
-        .fixed-action-btn.active > .btn-floating > .fa-bars {
-          transform: rotate(135deg);
-        }
-
-        .not-active {
-          pointer-events: none;
-          cursor: default;
-        }
-
-
-              .hoverCard {
-              display: block; 
-                /*margin-bottom: 20px;*/
-                /*line-height: 1.42857143;*/
-                /*background-color: #eaf9fa;*/
-                /*border-radius: 10px;*/
-                /*box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);*/ 
-                /*transition: box-shadow .25s; */
-               /* padding-top:1px;*/
-            }
-            .hoverCard:hover {
-              /*box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);*/
-            }
-            .img-card {
-              width: 100%;
-              /*height:200px;*/
-              /*border-top-left-radius:2px;
-              border-top-right-radius:2px;*/
-              display:block;
-                overflow: hidden;
-            }
-            .img-card img{
-              width: 100%;
-              /*height: 200px;*/
-              object-fit:cover; 
-              transition: all .25s ease;
-            } 
-            .hoverCard-content {
-              padding:15px;
-              text-align:left;
-            }
-            .hoverCard-title {
-              margin-top:0px;
-              font-weight: 700;
-              font-size: 1.65em;
-            }
-            .hoverCard-title a {
-              color: #000;
-              text-decoration: none !important;
-            }
-            .hoverCard-read-more {
-              border-top: 1px solid #D4D4D4;
-            }
-            .hoverCard-read-more a {
-              text-decoration: none !important;
-              padding:10px;
-              font-weight:600;
-              text-transform: uppercase
-            }
-
-            .view-first img {
-              /*1*/
-              transition: all 0.2s linear;
-              width: 100%;
-              height: 100%;
-            }
-
-            .view-first .mask {
-              opacity: 0;
-              background-color: rgba(12, 19, 27, 0.6);
-              transition: all 0.4s ease-in-out;
-            }
-
-            .view-first h2 {
-              transform: translateY(-100px);
-              opacity: 0;
-              font-family: Raleway, serif;
-              transition: all 0.2s ease-in-out;
-            }
-
-            .view-first p {
-              transform: translateY(100px);
-              opacity: 0;
-              transition: all 0.2s linear;
-            }
-
-            .view-first a.info {
-              opacity: 0;
-              transition: all 0.2s ease-in-out;
-            }
-
-
-            /* */
-
-            .view-first:hover img {
-              transform: scale(1.1);
-            }
-
-            .view-first:hover .mask {
-              opacity: 1;
-            }
-
-            .view-first:hover h2,
-            .view-first:hover p,
-            .view-first:hover a.info {
-              opacity: 1;
-              transform: translateY(0px);
-            }
-
-            .view-first:hover p {
-              transition-delay: 0.1s;
-            }
-
-            .view-first:hover a.info {
-              transition-delay: 0.2s;
-            }
-            .view h2 {
-              text-transform: uppercase;
-              color: #fff;
-              text-align: center;
-              position: relative;
-              font-size: 17px;
-              font-family: 'Raleway', serif;
-              padding: 10px;
-              /*background: rgba(0, 0, 0, 0.8);*/
-              margin: 20px 0 0 0
-            }
-
-            .view p {
-              font-family: 'Raleway', serif;
-              font-style: italic;
-              font-size: 14px;
-              position: relative;
-              color: #fff;
-              padding: 0px 20px 0px;
-              text-align: center
-            }
-
-            .view a.info {
-              display: inline-block;
-              text-decoration: none;
-              padding: 7px 14px;
-              background: #000;
-              color: #fff;
-              font-family: Raleway, serif;
-              text-transform: uppercase;
-              box-shadow: 0 0 1px #000
-            }
-
-            .view a.info:hover {
-              box-shadow: 0 0 5px #000
-            }
-
-            .view {
-              margin: 10px;
-              /*float: left*/;
-              border: 1px solid white;
-              overflow: hidden;
-              position: relative;
-              text-align: center;
-              box-shadow: 1px 1px 2px #e6e6e6;
-            }
-
-            .view .mask,
-            .view .content {
-              width: 100%;
-              height: 100%;
-              position: absolute;
-              overflow: hidden;
-              top: 0;
-              left: 0;
-            }
-
-            .hoverdescH1 {
-              font-weight: bold !important;
-              color: #fff !important;
-              font-size: 250% !important;
-              margin-top:20% !important;
-            }
-
-            .hoverdescH2 {
-              font-weight: bold !important;
-              color: #fff !important;
-              font-size: 200% !important;
-            }
-
-            .hoverdescH3 {
-              font-weight: bold !important;
-              color: #fff !important;
-              font-size: 150% !important;
-            }
-
-            .hoverdescH4 {
-              font-weight: bold !important;
-              color: #fff !important;
-              font-size: 150% !important;
-            }
-
-            .footer {
-              text-align: center !important;
-              font-size: 100% !important;
-              font-weight: bold !important;
-              color:black !important;
-            }
-
-            .arrow-down{
-              width:60px;
-              height:90px;
-              margin:0 0 0 -10px;
-              position:absolute !important;
-              left:50% !important;
-              bottom:0px !important;
-              -webkit-animation: arrow 0.5s 1s infinite ease-out alternate;
-              
-            }
-
-            .arrow-down:hover{
-               -webkit-animation-play-state: paused;
-            }
-
-            .left{
-              position:absolute;
-              height:10px;
-              width:40px;
-              background:black;
-              -webkit-transform:rotate(240deg);
-              top:10px;
-              left:10px;
-              -webkit-border-radius:4px;
-              -webkit-transform-origin:5px 50%;
-              -webkit-animation: leftArrow 0.5s 1s infinite ease-out alternate;
-            }
-
-            .right{
-              position:absolute;
-              height:10px;
-              width:40px;
-              background:black;
-              -webkit-transform:rotate(-60deg);
-              top:10px;
-              left:10px;
-              -webkit-border-radius:4px;
-              -webkit-transform-origin:5px 50%;
-              -webkit-animation: rightArrow 0.5s 1s infinite ease-out alternate;
-            }
-
-            .icon-3d {
-          padding: 15px;
-          margin: 5px;
-          text-align: center;
-           }
-
-           .icon-3d:hover {
-            color: #fff;
-           }
-
-
-            @-webkit-keyframes asrrow{
-              0% {
-                bottom:0px;
-              }
-              100%{
-                bottom:40px;
-              }
-            }
-
-
-            @-webkit-keyframes leftArrow{
-              0% {
-              }
-              100%{
-                -webkit-transform:rotate(225deg);
-              }
-            }
-
-            @-webkit-keyframes rightArrow{
-              0% {
-              }
-              100%{
-                -webkit-transform:rotate(-45deg);
-              }
-            }
-
-            #contact {
-              height: 50vh;
-              align-items: center;
-              display: flex;
-              justify-content: center;
-            }
-
-            #contactbutton {
-              text-align: center;
-            }
-
-            #scroll {
-              background-color: white !important;
-              /*height: 10px;*/
-              position: relative;
-              bottom: 26px;
-              right: 12px;
-            }
-
-             
-
-
-        </style>
-    </head>
-    <body>
-
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-
-      <div id="myNav" class="overlay">
-  
-  <!-- Activate the button -->
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  
-  <!-- The Overlay Content -->
-      <div class="overlay-content">
-        <a href="index.html">My Work</a>
-        <a href="aboutMiguelPage.html">About Me</a>
-        <a href="https://drive.google.com/file/d/1uDJGn_zQm3BKA6bjlynSTgMFZxrebI0W/view?usp=sharing">Resume</a>
-        <a href="contact.html">Say Hello</a>
-        <a href="#" class="not-active">More Coming Soon!</a>
-          <div class="flex-center">
-            <a href="https://www.facebook.com/miguelmartin.sioco" target="_blank"><i class="fab fa-facebook-f icon-3d"></i></a>
-            <a href="https://www.instagram.com/miguelsioco/" target="_blank"><i class="fab fa-instagram icon-3d"></i></a>
-            <a href="https://www.linkedin.com/in/miguelmartinsioco/" target="_blank"><i class="fab fa-linkedin-in icon-3d"></i></a>
-          </div>
       </div>
     </div>
 
+		<a class="col hide-on-large-only" href="javascript:" id="return-to-top"><img src="top.png"></a> <!--Return to top button-->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+<script type="text/javascript">
+
+	$(document).ready(function() {
+
+		$("input").click(function(){
+      		if(!$("#chkbox").prop("checked")){ // if the checkbox is not checked do the following
+	    		$("body").removeClass("night");
+	    		$(".btn").removeClass("btn-night").text("Off");
+	            $("p").removeClass("text-night");
+	            $("h1").removeClass("text-night");
+	            $("#email").removeClass("text-night");
+	            $(".navigation").removeClass("text-night");
+              $("#about").removeClass("text-night");
+              $("#projects").removeClass("text-night");
+              $(".navlinks").removeClass("text-night");
+	            
+	    	} else { // else if the checkbox is checked do the following
+	    		$("body").addClass("night");
+	    		$(".btn").addClass("btn-night").text("On");
+	            $("p").addClass("text-night");
+	            $("h1").addClass("text-night");
+	            $("#email").addClass("text-night");
+	            $(".navigation").addClass("text-night");
+              $("#about").addClass("text-night");
+              $("#projects").addClass("text-night");
+              $(".navlinks").addClass("text-night");
+	    	}
+	    });
+
+	    $(window).scroll(function() {
+		    if ($(this).scrollTop() >= 450) {        // If page is scrolled more than 450px
+		        $('#return-to-top').fadeIn(550);    // Fade in the arrow
+		    } else {
+		        $('#return-to-top').fadeOut(550);   // Else fade out the arrow
+		    }
+		});
+		$('#return-to-top').click(function() {      // When arrow is clicked
+		    $('body,html').animate({
+		        scrollTop : 0                       // Scroll to top of body
+		    }, 500);
+		});
+	});
+</script>
+
+<script type="text/javascript" src="js/materialize.min.js">
+
+</script>
 
 
-    <!-- The Actual Button itself to open the nav -->
-    <div class="fixed-action-btn">
-        menu <a class="btn-floating btn-large tooltipped" data-position="left" data-tooltip="Navigate here" onclick="openNav()"><i class="fa fa-bars"></i></a>
-    </div>
+<script>
+ $(document).ready(function(){
 
+  $('.scrollspy').scrollSpy();
+});
+</script>
 
-        <div class="flex-center position-ref full-height">
-
-            <div class="content">
-                <div class="title m-b-md">
-                    <h1 id="static">Hi, I'm<span><div class="con-tooltip top"><span class="miguel">Miguel</span><a href="aboutMiguelPage.html"><div class="tooltip hide-on-small-only"><p>Let me introduce myself in this <span class="tooltip-link">link.</span></span></p></div></a><span class="normal">.</span></div></span><br>I
-                      <span
-                         class="txt-rotate"
-                         data-period="800"
-                         data-rotate='[ "research", "design", "&ltcode&gt", "" ]'></span>
-                    </h1>
-                    
-                </div>
-            </div>
-        </div>
-        
-        
-<div class="arrow-down">
-  
-    <span class="tooltipped" data-position="top" data-tooltip="Let me show you my work." tabindex="1">
-          <a id="scroll" href="#introduction" class="btn-large"></a><div class="left"></div>
-          <div class="right"></div>
-          
-        </div></span>
-
-
-         <div id="introduction" class="section scrollspy">
-          <div class="containered">
-              <div class="row">
-                    <div id="marahuyo" class="col s12 m12 l6">
-                      <div class="hoverCard">
-                        <div class="view view-first">
-                          <img id="marahuyodisplay" class="responsive-img hoverable" src="marahuyofinal.png">
-                            <a href="https://miguelsioco.github.io/miguelsioco/capstone1day7_sioco.html" target="_blank"><div class="mask">
-                                <h1 class="hoverdescH1">Marahuyo</h1>
-                                <h2 class="hoverdescH2">&ltweb&gt</h2>
-                                <h3 class="hoverdescH3">front-end</h3>
-                            </div></a>
-                        </div>                             
-                      </div>
-                    </div>
-
-                    <div id="risah" class="col s12 m12 l6 section scrollspy">
-                      <div class="hoverCard">
-                        <div class="view view-first">
-                          <img id="risahdisplay" class="responsive-img hoverable" src="risah.png">
-                            <a href="https://risah.000webhostapp.com/index.php/" target="_blank"><div class="mask">
-                                <h1 class="hoverdescH1">risa+h</h1>
-                                <h2 class="hoverdescH2">&ltweb&gt</h2>
-                                <h3 class="hoverdescH3">front-end + back-end</h3>
-                            </div></a>
-                          </div>                             
-                      </div>
-                    </div>
-
-<!--                     <div id="theStartup" class="col s12 m6 l6 section scrollspy">
-                      <div class="hoverCard">
-                        <div class="view view-first">
-                          <img id="theStartupdisplay" class="responsive-img hoverable" src="theStartUp.png">              
-                              <div class="mask">
-                                <h1 class="hoverdescH1">The Startup</h1>
-                                <h2 class="hoverdescH2">&ltweb&gt</h2>
-                                <h3 class="hoverdescH3">front-end + back-end</h3>
-                                <h3 class="hoverdescH4"><i class="fa fa-wrench" style="font-size:36px"></i> still undergoing construction</h3>
-                              </div>
-                          </div>                             
-                      </div>
-                    </div>
-
-                    <div id="RLC" class="col s12 m6 l6 section scrollspy">
-                      <div class="hoverCard">
-                        <div class="view view-first">
-                          <img id="RLCdisplay" class="responsive-img hoverable" src="rlc.png">
-                              <div class="mask">
-                                <h1 class="hoverdescH1">Kinaadman</h1>
-                                <h2 class="hoverdescH2">Physical UX</h2>
-                                <h3 class="hoverdescH3">Research + Strategy + Implementation</h3>
-                                <h3 class="hoverdescH4"><i class="fa fa-wrench" style="font-size:36px"></i> still undergoing construction</h3>
-                              </div>
-                        </div>                             
-                      </div>
-                    </div> -->
-
-              </div>
-          </div>
-        </div>
-
-
-     <div class="container">
-        <div class="row">
-            <div class="col s12 m12 l12">
-                <hr class="grey">
-
-            </div>
-        </div>
-    </div>
-
-          <div class="container">
-            <div class="row">
-              <div class="col s12 m12 l12">
-                <h6 class="footer">Handmade by Yours Truly &copy 2018.</h6>
-              </div>
-            </div>
-          </div>
-
-
-
-
-            <script>
-            
-            var TxtRotate = function(el, toRotate, period) {
-              this.toRotate = toRotate;
-              this.el = el;
-              this.loopNum = 0;
-              this.period = parseInt(period, 10) || 2000;
-              this.txt = '';
-              this.tick();
-              this.isDeleting = false;
-            };
-
-            TxtRotate.prototype.tick = function() {
-              var i = this.loopNum % this.toRotate.length;
-              var fullTxt = this.toRotate[i];
-
-              if (this.isDeleting) {
-                this.txt = fullTxt.substring(0, this.txt.length - 1);
-              } else {
-                this.txt = fullTxt.substring(0, this.txt.length + 1);
-              }
-
-              this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-              var that = this;
-              var delta = 300 - Math.random() * 100;
-
-              if (this.isDeleting) { delta /= 2; }
-
-              if (!this.isDeleting && this.txt === fullTxt) {
-                delta = this.period;
-                this.isDeleting = true;
-              } else if (this.isDeleting && this.txt === '') {
-                this.isDeleting = false;
-                this.loopNum++;
-                delta = 500;
-              }
-
-              setTimeout(function() {
-                that.tick();
-              }, delta);
-            };
-
-            window.onload = function() {
-              var elements = document.getElementsByClassName('txt-rotate');
-              for (var i=0; i<elements.length; i++) {
-                var toRotate = elements[i].getAttribute('data-rotate');
-                var period = elements[i].getAttribute('data-period');
-                if (toRotate) {
-                  new TxtRotate(elements[i], JSON.parse(toRotate), period);
-                }
-              }
-              // INJECT CSS
-              var css = document.createElement("style");
-              css.type = "text/css";
-              css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-              document.body.appendChild(css);
-            };
-
-                        function openNav(){
-              document.getElementById("myNav").style.width ="100%";
-              
-            }
-
-            /*chiude l'overlay */
-            function closeNav(){
-              document.getElementById("myNav").style.width="0%";
-            }
-
-        </script>
-
-        <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        
-        <script>
-            
-            $(document).ready(function(){
-              $('.scrollspy').scrollSpy();
-
-              $('.tooltipped').tooltip();
-            });
-
-      
-
-
-        </script>
-    </body>
+</body>
 </html>
